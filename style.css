@@ -92,6 +92,7 @@ select {
     align-items: center;
     justify-content: center;
     margin-bottom: 30px;
+    color: #fff;
 }
 
 .timer .progress {
@@ -180,11 +181,18 @@ select {
     opacity: 1;
 }
 
-.answer .correct {
-    border: #0cef2a;
+.question-wrap .answers .answer.correct{
+    border-color: #0cef2a;
+}
+.correct{
+    border-color: #0cef2a;
 }
 
-.answer.wrong {
+.question-wrap .answers .answer.wrong{
+    border-color: #fc3939;
+}
+
+.wrong{
     border-color: #fc3939;
 }
 
@@ -192,21 +200,18 @@ select {
     display: none;
 }
 
-.end-screen {
-    margin-top: 2rem;
-}
-
 .end-screen .score{
     color: #fff;
     font-size: 22px;
     font-weight: 500;
-    margin-bottom: 80px;
     text-align: center;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
 }
 
 .end-score .score-text{
     color: #a2aace;
-    font-size: 16px;
+    font-size: 12px !important;
     margin-bottom: 120px;
 }
 

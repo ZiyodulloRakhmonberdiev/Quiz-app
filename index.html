@@ -11,7 +11,7 @@
 
 <body>
     <div class="container">
-        <div class="start-screen hide">
+        <div class="start-screen">
             <div class="heading">Quiz app</div>
             <div class="settings">
                 <label for="num-questions">Number of questions: </label>
@@ -66,8 +66,8 @@
             <button class="btn start">
                 Start quiz
             </button>
-        </div>
-        <div class="quiz">
+        </div> 
+        <div class="quiz hide">
             <div class="timer">
                 <div class="progress">
                     <div class="progress-bar"></div>
@@ -76,20 +76,14 @@
             </div>
             <div class="question-wrap">
                 <div class="number">
-                    Question <span class="current">1</span>
-                    <span class="total">/10</span>
+                    <!-- Question <span class="current">1</span>
+                    <span class="total">/10</span> -->
                 </div>
                 <div class="question">
-                    This is a question
+                    <!-- This is a question -->
                 </div>
                 <div class="answers">
-                    <div class="answer selected">
-                        <span class="text">Answer</span>
-                        <span class="checkbox">
-                            <span class="icon">✔</span>
-                        </span>
-                    </div>
-                    <div class="answer">
+                    <!-- <div class="answer">
                         <span class="text">Answer</span>
                         <span class="checkbox">
                             <span class="icon">✔</span>
@@ -106,13 +100,13 @@
                         <span class="checkbox">
                             <span class="icon">✔</span>
                         </span>
-                    </div>
+                    </div> -->
                 </div>
                 <button class="btn submit">Submit</button>
                 <button class="btn next">Next</button>
             </div>
         </div>
-        <div class="end-screen">
+        <div class="end-screen hide">
             <h2 class="heading">Quiz app</h2>
             <div class="score">
                 <div class="score-text">Your score:</div>
@@ -124,6 +118,7 @@
             <button class="btn restart">Restart quiz</button>
         </div>
     </div>
+    <script src="./script.js"></script>
 </body>
 
 </html>
