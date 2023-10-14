@@ -9,7 +9,7 @@ const progress = (value) => {
 }
 
 let questions = [],
-    time = 30, 
+    time = 30,
     score = 0,
     currentQuestion,
     timer;
@@ -95,7 +95,7 @@ const startTimer = (time) => {
             progress(time);
             time--;
         }
-        else{
+        else {
             checkAnswer();
         }
     }, 1000)
@@ -109,11 +109,11 @@ const checkAnswer = () => {
     clearInterval(timer);
     const selectedAnswer = document.querySelector(".answer.selected");
     const correctAnswer = questions[currentQuestion - 1].correct_answer;
-    const userAnswer = selectedAnswer.querySelector(".text").innerHTML;
+    const userAnswer = document.querySelector(".text").innerHTML;
 
     // any answer is selected
     if (selectedAnswer) {
-        if(userAnswer === correctAnswer) {
+        if (userAnswer === correctAnswer) {
             // increase score
             score++;
             selectedAnswer.classList.add("correct");
@@ -123,7 +123,7 @@ const checkAnswer = () => {
             const correctAnswer = document.querySelectorAll(".answer").forEach((answer) => {
                 if (answer.querySelector('.text').innerHTML === questions[currentQuestion - 1].correct_answer) {
                     answer.classList.add("correct")
-                } 
+                }
             });
         }
     }
@@ -132,15 +132,18 @@ const checkAnswer = () => {
     // lets just add correct class on correct answer
     else {
         const correctAnswer = document.querySelectorAll(".answer").forEach((answer) => {
-            if (answer.querySelector('.text').innerHTML === questions[currentQuestion -1].correct_answer) {
+            if (answer.querySelector('.text').innerHTML === questions[currentQuestion - 1].correct_answer) {
                 answer.classList.add("correct")
+                if (selectedAnswer) {
+                    score++;
+                }
             }
         });
     }
 
     // block user to select further answers
     const answerDiv = document.querySelectorAll('.answer');
-    answerDiv.forEach((answer) => { 
+    answerDiv.forEach((answer) => {
         answer.classList.add("checked");
     })
     submitBtn.style.display = "none";
@@ -157,8 +160,8 @@ const nextQuestion = () => {
     // if there is remaining question
     if (currentQuestion < questions.length) {
         currentQuestion++;
-        showQuestion(questions[currentQuestion -1])
-    } else{
+        showQuestion(questions[currentQuestion - 1])
+    } else {
         showScore();
     }
 }
@@ -166,14 +169,14 @@ const nextQuestion = () => {
 const endScreen = document.querySelector(".end-screen"),
     finalScore = document.querySelector(".final-score"),
     totalScore = document.querySelector(".total-score");
-    
+
 
 const showScore = () => {
     endScreen.classList.remove("hide");
     quiz.classList.add('hide');
     finalScore.innerHTML = score;
     totalScore.innerHTML = `/${questions.length}`
-}    
+}
 
 const restartBtn = document.querySelector(".restart");
 restartBtn.addEventListener("click", () => {
